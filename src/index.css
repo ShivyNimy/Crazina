@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --bg-canvas: #faf9f6;
+    --bg-surface: #ffffff;
+    --bg-subtle: #f2f0ea;
+    --border-subtle: #e6e3da;
+    --ink-primary: #14151a;
+    --ink-secondary: #4c5160;
+    --ink-muted: #767b8c;
+    --accent-emerald: #0f9d68;
+    --accent-vermilion: #e05a2b;
+  }
+
+  .dark {
+    --bg-canvas: #0d0f14;
+    --bg-surface: #14171f;
+    --bg-subtle: #1b202b;
+    --border-subtle: #262c3a;
+    --ink-primary: #f4f5f7;
+    --ink-secondary: #b5bccb;
+    --ink-muted: #7f8799;
+  }
+
+  html {
+    font-family: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: var(--bg-canvas);
+    color: var(--ink-primary);
+    scroll-behavior: smooth;
+  }
+
+  code, pre, .font-mono {
+    font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  }
+}
+
+/* CodeMirror polish */
+.cm-editor {
+  height: 100%;
+  font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace !important;
+  font-size: 13.5px;
+  line-height: 1.6;
+}
+
+.cm-editor.cm-focused {
+  outline: none !important;
+}
+
+.cm-scroller {
+  overflow: auto;
+  font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace !important;
+}
+
+.cm-gutters {
+  border-right: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+/* Custom thin scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(120, 128, 145, 0.3);
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(120, 128, 145, 0.5);
+}
